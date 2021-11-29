@@ -24,7 +24,7 @@ d3.tsv("data/tsunamis-2021-09-01_10-25-52_+0200.tsv").then(function(data) {
         const lat = data[i].Latitude;
         const lon = data[i].Longitude;
         let marker = L.marker([lat,lon]);
-        marker.bindPopup( "Location : " + data[i].LocationName + "\n" + "Date : " + data[i].Dy + "/" + data[i].Mo + " " + data[i].Year);
+        marker.bindPopup(doMarker(i));
         marker.addTo(cluster);
 
 
@@ -35,6 +35,14 @@ d3.tsv("data/tsunamis-2021-09-01_10-25-52_+0200.tsv").then(function(data) {
 })
 
 
+function doMarker(i) {
+    let popup;
+    popup+= "<h1>Marker</h1>\
+    <ul>\
+    <li> Location : " + data[i].LocationName + </li>\
+    </ul>;
+    
+}
 
 //json let coordinates = data[i].geometry.coordinates
 //          L.marker(coordinates).addTo(map);       
