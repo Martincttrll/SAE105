@@ -34,7 +34,7 @@ d3.tsv("data/tsunamis-2021-09-01_10-25-52_+0200.tsv").then(function(data) {
 
     function doMarker(i) {
 
-        let popup="<h1> bloup" + i + "</h1>";
+        let popup="";
         popup+= "<h1>Marker</h1>\
         <ul>\
         <li> Location : " + data[i].LocationName + "</li>\
